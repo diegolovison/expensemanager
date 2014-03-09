@@ -92,14 +92,6 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
-        //debug 'org.hibernate.SQL'
-        //debug 'org.hibernate.transaction'
-        //debug 'org.springframework.transaction.support'
-    }
-    test {
-        //debug 'org.hibernate.SQL'
-        //debug 'org.hibernate.transaction'
-        //debug 'org.springframework.transaction.support'
     }
     production {
         grails.logging.jul.usebridge = false

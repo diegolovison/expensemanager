@@ -2,8 +2,8 @@ dataSource {
     pooled = true
     jmxExport = true
     driverClassName = "org.h2.Driver"
-    username = System.env.OPENSHIFT_POSTGRESQL_DB_USERNAME
-    password = System.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD
+    username = "sa"
+    password = ""
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -23,11 +23,7 @@ environments {
     }
     test {
         dataSource {
-            //driverClassName = "org.postgresql.Driver"
-            //dbCreate = "update"
-            //dialect = org.hibernate.dialect.PostgreSQLDialect
-            //url = "jdbc:postgresql://"+System.env.OPENSHIFT_POSTGRESQL_DB_HOST+":"+System.env.OPENSHIFT_POSTGRESQL_DB_PORT+"/"+System.env.OPENSHIFT_APP_NAME
-            dbCreate = "create-drop"
+            dbCreate = "update"
             url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
     }

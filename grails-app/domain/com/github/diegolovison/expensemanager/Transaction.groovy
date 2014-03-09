@@ -9,7 +9,7 @@ class Transaction {
     BigDecimal amount
     Operation operation
 
-    static belongsTo = [ account: Account ]
+    static belongsTo = [ account: Account, category: Category ]
 
     static constraints = {
         amount (blank: false, min: new BigDecimal("0"))

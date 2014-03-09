@@ -7,6 +7,7 @@ class Account {
 
     static constraints = {
         name(blank:false,maxSize:60)
+        balance(blank:false)
     }
 
     def deposit(BigDecimal amount) {

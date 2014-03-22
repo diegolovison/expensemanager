@@ -41,3 +41,7 @@
 
 # other
 *.iws
+
+#sencha touch "temporary" files
+/web-app/build
+/web-app/resources/sass/.sass-cache

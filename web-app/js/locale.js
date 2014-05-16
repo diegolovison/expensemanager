@@ -33,8 +33,3 @@ var i18n = (function() {
 })();
 
 i18n.loadMessages(i18n.getLocale(window.navigator.language));
-
-// shortcut
-function t(key) {
-    return i18n.translate(key);
-}

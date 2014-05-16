@@ -1,6 +1,8 @@
 Ext.define('ExpenseManager.form.Category', {
-    extend: 'Ext.Container',
+    extend : 'Ext.form.Panel',
+
     xtype: 'categoryForm',
+    id: 'categoryForm',
 
     requires: [
         'Ext.form.FieldSet',
@@ -9,18 +11,21 @@ Ext.define('ExpenseManager.form.Category', {
 
     config: {
 
+        height: '120px',
+
         items: [{
+
             xtype: 'fieldset',
             items: [
                 {
-                    xtype: 'textfield',
-                    name : 'name',
-                    label: t('Name')
-                },
-                {
                     xtype: 'selectfield',
                     name: 'parent',
-                    label: t('Parent')
+                    label: t('parent')
+                },
+                {
+                    xtype: 'textfield',
+                    name : 'name',
+                    label: t('name')
                 }
             ]
         }]

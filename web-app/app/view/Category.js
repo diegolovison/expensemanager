@@ -11,10 +11,16 @@ Ext.define('ExpenseManager.view.Category', {
         items: [
             {
                 xtype: 'titlebar',
-                title: t('Category')
+                title: t('category')
             },
             {
                 xtype: 'categoryForm'
+            },
+            {
+                xtype: 'button',
+                text: t('save'),
+                id: 'saveCategoryBtn',
+                ui: 'confirm'
             }
         ]
     }

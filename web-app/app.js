@@ -17,6 +17,12 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
+    models: ['Category'],
+
+    stores: ['Category'],
+
+    controllers: ['Category'],
+
     views: [
         'Main'
     ],

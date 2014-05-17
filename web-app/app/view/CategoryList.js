@@ -6,18 +6,8 @@ Ext.define('ExpenseManager.view.CategoryList', {
 
         height: '500px',
 
-        itemTpl: '{title}',
-        data: [
-            {
-            title: 'Item 1'
-            }, {
-                title: 'Item 2'
-            }, {
-                title: 'Item 3'
-            }, {
-                title: 'Item 4'
-            }
-        ] 
- 
+        xtype: 'list',
+        itemTpl: '{name}',
+        store: 'categoryStore'
     }
 });

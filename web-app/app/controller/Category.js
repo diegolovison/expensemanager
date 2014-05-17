@@ -4,11 +4,17 @@ Ext.define('ExpenseManager.controller.Category', {
     config: {
         refs: {
             saveCategoryBtn: '#saveCategoryBtn',
-            categoryForm: '#categoryForm'
+            addCategoryBtn: '#addCategoryBtn',
+            categoryForm: '#categoryForm',
+            categoryEdit: '#categoryEdit',
+            category: '#category'
         },
         control: {
             saveCategoryBtn: {
-                tap: "saveCategory"
+                tap: 'saveCategory'
+            },
+            addCategoryBtn: {
+                tap: 'addCategory'
             }
         }
     },
@@ -21,5 +27,10 @@ Ext.define('ExpenseManager.controller.Category', {
 
         var categoryStore = Ext.getStore('categoryStore');
         categoryStore.add(category);
+    },
+
+    addCategory: function() {
+    
+        this.getCategory().push({xtype: 'categoryEdit'})
     }
 });

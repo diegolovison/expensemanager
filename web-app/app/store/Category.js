@@ -10,10 +10,12 @@ Ext.define('ExpenseManager.store.Category', {
         storeId: 'categoryStore',
         model: 'ExpenseManager.model.Category',
         autoSync: true,
+        appendId: false,
+        autoLoad: true,
 
         proxy: {
             type: 'rest',
-            url: '/categories'
+            url: url('categories')
         }
     }
 });

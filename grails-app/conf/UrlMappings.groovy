@@ -2,7 +2,7 @@ class UrlMappings {
 
 	static mappings = {
 
-		"/categories"(resources:'category')
+        "/categories"(resources:'category')
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

@@ -11,26 +11,31 @@ Ext.define('ExpenseManager.form.Category', {
 
     config: {
 
-        height: '120px',
-
-        items: [{
-
-            xtype: 'fieldset',
-            items: [
-                {
-                    xtype: 'selectfield',
-                    name: 'parent',
-                    store: 'categoryStore',
-                    displayField: 'name',
-                    autoSelect: false,
-                    label: t('parent')
-                },
-                {
-                    xtype: 'textfield',
-                    name : 'name',
-                    label: t('name')
-                }
-            ]
-        }]
+        items: [
+            {
+                xtype: 'fieldset',
+                items: [
+                    {
+                        xtype: 'selectfield',
+                        name: 'parent',
+                        store: 'categoryStore',
+                        displayField: 'name',
+                        autoSelect: false,
+                        label: t('parent')
+                    },
+                    {
+                        xtype: 'textfield',
+                        name : 'name',
+                        label: t('name')
+                    }
+                ]
+            },
+            {
+                xtype: 'button',
+                text: t('save'),
+                id: 'saveCategoryBtn',
+                ui: 'confirm'
+            }
+        ]
     }
 });

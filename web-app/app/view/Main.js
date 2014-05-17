@@ -4,21 +4,31 @@ Ext.define('ExpenseManager.view.Main', {
     
     requires: [
         'Ext.TitleBar',
-        'ExpenseManager.view.Category'
+        'ExpenseManager.view.Category',
+        'ExpenseManager.view.CategoryList'
     ],
     
     config: {
 
+        fullscreen: true,
         tabBarPosition: 'bottom',
 
         items: [
             {
-                title: 'Category',
+                title: t('category.list'),
+                iconCls: 'organize',
+                items: {
+                    xtype: 'categoryList'    
+                }
+            },
+            {
+                title: t('category'),
                 iconCls: 'organize',
                 items: {
                     xtype: 'category'    
                 }
             }
+            
         ]
     }
 });

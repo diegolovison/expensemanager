@@ -2,34 +2,21 @@ Ext.define('ExpenseManager.view.Category', {
     extend: 'Ext.navigation.View',
     
     xtype: 'category',
-    id: 'category',
+    
+    requires: [
+        'ExpenseManager.view.category.List',
+        'ExpenseManager.view.category.Edit'
+    ],
 
     config: {
 
         height: '500px',
+        navigationBar: false,
+        autoDestroy: false,
 
         items: [
             {
-                xtype: 'toolbar',
-                docked: 'top',
-                title: t('category.list'),
-                items: [
-                    {
-                        xtype: 'spacer'
-                    }, 
-                    {
-                        xtype: 'button',
-                        text: t('new'),
-                        ui: 'action',
-                        id: 'addCategoryBtn'
-                    }
-                ]
-            },
-            {
-                xtype: 'list',
-                itemTpl: '{name}',
-                store: 'categoryStore',
-                height: '500px',   
+                xtype: 'listCategory',
             }
         ]
     }

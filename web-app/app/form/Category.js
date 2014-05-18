@@ -2,7 +2,6 @@ Ext.define('ExpenseManager.form.Category', {
     extend : 'Ext.form.Panel',
 
     xtype: 'categoryForm',
-    id: 'categoryForm',
 
     requires: [
         'Ext.form.FieldSet',

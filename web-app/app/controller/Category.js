@@ -5,21 +5,27 @@ Ext.define('ExpenseManager.controller.Category', {
         refs: {
             saveCategoryBtn: '#saveCategoryBtn',
             addCategoryBtn: '#addCategoryBtn',
-            categoryForm: '#categoryForm',
-            categoryEdit: '#categoryEdit',
-            category: '#category'
+            backCategoryBtn: '#backCategoryBtn',
+            
+            categoryForm: 'categoryForm',
+            editCategory: 'editCategory',
+            listCategory: 'listCategory',
+            category: 'category'
         },
         control: {
             saveCategoryBtn: {
-                tap: 'saveCategory'
+                tap: 'onSaveCategory'
             },
             addCategoryBtn: {
-                tap: 'addCategory'
+                tap: 'onAddCategory'
+            },
+            backCategoryBtn: {
+                tap: 'onBackCategory'
             }
         }
     },
 
-    saveCategory: function() {
+    onSaveCategory: function() {
 
         var values = this.getCategoryForm().getValues();
 
@@ -27,10 +33,25 @@ Ext.define('ExpenseManager.controller.Category', {
 
         var categoryStore = Ext.getStore('categoryStore');
         categoryStore.add(category);
+
+        this.getCategory().pop();
     },
 
-    addCategory: function() {
+    onAddCategory: function() {
+
+        if (this.getCategoryForm() != undefined) {
+            this.getCategoryForm().reset();
+        }
+
+        if (!this.editCategory) {
+            this.editCategory = Ext.create('ExpenseManager.view.category.Edit');
+        }
     
-        this.getCategory().push({xtype: 'categoryEdit'})
+        this.getCategory().push(this.editCategory);
+    },
+
+    onBackCategory: function() {
+
+        this.getCategory().pop();
     }
 });

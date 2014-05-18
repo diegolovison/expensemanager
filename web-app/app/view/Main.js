@@ -5,7 +5,6 @@ Ext.define('ExpenseManager.view.Main', {
     
     requires: [
         'Ext.TitleBar',
-        'ExpenseManager.view.category.Edit',
         'ExpenseManager.view.Category'
     ],
     

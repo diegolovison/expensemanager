@@ -6,7 +6,7 @@ class Account {
     BigDecimal balance = new BigDecimal("0")
 
     static constraints = {
-        name(blank:false,maxSize:60)
+        name(blank:false,minSize:1,maxSize:60)
         balance(blank:false)
     }
 

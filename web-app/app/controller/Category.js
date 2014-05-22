@@ -32,9 +32,18 @@ Ext.define('ExpenseManager.controller.Category', {
         var category = Ext.create('ExpenseManager.model.Category', values);
 
         var categoryStore = Ext.getStore('categoryStore');
-        categoryStore.add(category);
-
-        this.getCategory().pop();
+        
+        category.save({
+            failure: function(record, operation) {
+                //var errors = Ext.decode(operation.getResponse().responseText).errors;
+                var errors = JSON.parse(operation.getResponse().responseText).errors;
+                Ext.Msg.alert('Title', errors[0].message, Ext.emptyFn);
+            },
+            success: function(record, operation) {
+                categoryStore.add(category);
+                this.getCategory().pop();
+            }
+        });
     },
 
     onAddCategory: function() {

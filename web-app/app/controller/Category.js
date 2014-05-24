@@ -36,8 +36,10 @@ Ext.define('ExpenseManager.controller.Category', {
         category.save({
             failure: function(record, operation) {
                 //var errors = Ext.decode(operation.getResponse().responseText).errors;
-                var errors = JSON.parse(operation.getResponse().responseText).errors;
-                Ext.Msg.alert('Title', errors[0].message, Ext.emptyFn);
+                //var errors = JSON.parse(operation.getResponse().responseText).errors;
+                //Ext.Msg.alert('Title', errors[0].message, Ext.emptyFn);
+                //ExpenseManager.component.Msg('title', 'alo');
+                ExpenseManager.component.Msg(record.getResponse());
             },
             success: function(record, operation) {
                 categoryStore.add(category);

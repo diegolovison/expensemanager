@@ -17,7 +17,7 @@ var i18n = (function() {
         if (userLocale == null) {
             document.write("<script src='i18n/messages.js' type='text/javascript'><\/script>");    
         } else {
-            document.write("<script src='i18n/messages_"+userLocale+"' type='text/javascript'><\/script>");    
+            document.write("<script src='i18n/messages_"+userLocale+".js' type='text/javascript'><\/script>");    
         }
     };
 

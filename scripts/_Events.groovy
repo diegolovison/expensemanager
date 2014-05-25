@@ -7,12 +7,14 @@ void compileSenchaApp() {
 
     def ant = new AntBuilder()
 
+/*
     ant.exec(
         dir: 'web-app',
         executable:'sencha'
     ) {
         arg(value:'app')
         arg(value:'build')
-        arg(value:'production')
+        arg(value:'testing')
     }
+*/
 }

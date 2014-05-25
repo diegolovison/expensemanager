@@ -82,3 +82,13 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.4.0"
     }
 }
+
+grails.war.copyToWebApp = { args ->
+    fileset(dir:"web-app") {
+        include(name: "WEB-INF/**")
+    }
+
+    fileset(dir:"web-app/build/production/ExpenseManager") {
+        include(name: "**")
+    }
+}

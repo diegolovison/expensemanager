@@ -27,6 +27,8 @@ Ext.define('ExpenseManager.controller.Category', {
 
     onSaveCategory: function() {
 
+        var me = this;
+
         var values = this.getCategoryForm().getValues();
 
         var category = Ext.create('ExpenseManager.model.Category', values);
@@ -39,7 +41,7 @@ Ext.define('ExpenseManager.controller.Category', {
             },
             success: function(record, operation) {
                 categoryStore.add(category);
-                this.getCategory().pop();
+                me.getCategory().pop();
             }
         });
     },

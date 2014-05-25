@@ -15,9 +15,9 @@ var i18n = (function() {
     i18n.loadMessages = function(locale) {
         var userLocale = i18n.getLocale(locale);
         if (userLocale == null) {
-            document.write("<script src='i18n/messages.js' type='text/javascript'><\/script>");    
+            document.write("<script src='resources/i18n/messages.js' type='text/javascript'><\/script>");    
         } else {
-            document.write("<script src='i18n/messages_"+userLocale+".js' type='text/javascript'><\/script>");    
+            document.write("<script src='resources/i18n/messages_"+userLocale+".js' type='text/javascript'><\/script>");    
         }
     };
 

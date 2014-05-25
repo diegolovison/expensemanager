@@ -1,20 +1,18 @@
 eventCreateWarStart = { warName, stagingDir ->
 
-    compileSenchaApp()
+    //compileSenchaApp()
 }
 
 void compileSenchaApp() {
 
     def ant = new AntBuilder()
 
-/*
     ant.exec(
-        dir: 'web-app',
+        dir: 'touch-app',
         executable:'sencha'
     ) {
         arg(value:'app')
         arg(value:'build')
         arg(value:'testing')
     }
-*/
 }

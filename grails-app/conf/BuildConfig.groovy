@@ -83,6 +83,7 @@ grails.project.dependency.resolution = {
     }
 }
 
+/*
 grails.war.copyToWebApp = { args ->
     fileset(dir:"web-app") {
         include(name: "WEB-INF/**")
@@ -92,3 +93,4 @@ grails.war.copyToWebApp = { args ->
         include(name: "**")
     }
 }
+*/

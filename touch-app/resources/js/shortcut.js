@@ -3,7 +3,8 @@ function t(key) {
 }
 
 function url(url) {
-	return window.location.pathname + url;
+	//return window.location.pathname + url;
+    return 'http://localhost:8080/expensemanager/' + url;
 }
 
 function showFailure(operation) {

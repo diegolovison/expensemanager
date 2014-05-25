@@ -106,8 +106,8 @@
         "resources/images",
         "resources/icons",
         "resources/startup",
-        "js",
-        "i18n"
+        "resources/js",
+        "resources/i18n"
     ],
 
     /**

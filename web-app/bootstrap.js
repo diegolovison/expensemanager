@@ -19,7 +19,14 @@ Ext.Loader.addClassPathMappings({
   "Ext.device.sqlite.SQLTransaction": "touch/src/device/sqlite/Sencha.js"
 });
 Ext.ClassManager.addNameAlternateMappings({
+  "ExpenseManager.controller.Category": [],
+  "ExpenseManager.form.Category": [],
+  "ExpenseManager.model.Category": [],
+  "ExpenseManager.store.Category": [],
+  "ExpenseManager.view.Category": [],
   "ExpenseManager.view.Main": [],
+  "ExpenseManager.view.category.Edit": [],
+  "ExpenseManager.view.category.List": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -641,8 +648,23 @@ Ext.ClassManager.addNameAlternateMappings({
   ]
 });
 Ext.ClassManager.addNameAliasMappings({
+  "ExpenseManager.controller.Category": [],
+  "ExpenseManager.form.Category": [
+    "widget.categoryForm"
+  ],
+  "ExpenseManager.model.Category": [],
+  "ExpenseManager.store.Category": [],
+  "ExpenseManager.view.Category": [
+    "widget.category"
+  ],
   "ExpenseManager.view.Main": [
     "widget.main"
+  ],
+  "ExpenseManager.view.category.Edit": [
+    "widget.editCategory"
+  ],
+  "ExpenseManager.view.category.List": [
+    "widget.listCategory"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],

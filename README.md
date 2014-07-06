@@ -24,7 +24,7 @@ grails run-app
 
 ##### Sencha Application
 ```sh
-cd expensemanager\touch-app
+cd expensemanager/touch-app
 sencha web start
 ```
 

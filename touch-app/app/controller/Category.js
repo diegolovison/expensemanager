@@ -41,7 +41,7 @@ Ext.define('ExpenseManager.controller.Category', {
         category.save({
             success: function(record, operation) {
                 categoryStore.add(category);
-                me.getCategory().pop();
+                me.onBackCategory();
             },
             failure: function(record, operation) {
                 showFailure(operation);
@@ -57,6 +57,8 @@ Ext.define('ExpenseManager.controller.Category', {
     },
 
     onBackCategory: function() {
+
+        this.getCategoryList().deselectAll();
 
         this.getCategory().pop();
     },

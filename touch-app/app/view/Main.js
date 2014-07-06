@@ -10,13 +10,13 @@ Ext.define('ExpenseManager.view.Main', {
     
     config: {
 
-        fullscreen: true,
         tabBarPosition: 'bottom',
 
         items: [
             {
                 title: t('category'),
                 iconCls: 'organize',
+                layout: 'fit',
                 items: {
                     xtype: 'category'    
                 }

@@ -10,13 +10,13 @@ Ext.define('ExpenseManager.view.Category', {
 
     config: {
 
-        height: '500px',
         navigationBar: false,
         autoDestroy: false,
 
         items: [
             {
                 xtype: 'categoryList',
+                layout: 'fit',
             }
         ]
     }

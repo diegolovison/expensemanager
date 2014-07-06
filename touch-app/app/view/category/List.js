@@ -5,8 +5,6 @@ Ext.define('ExpenseManager.view.category.List', {
 
     config: {
 
-        height: '500px',
-
         items: [
             {
                 xtype: 'toolbar',
@@ -28,7 +26,6 @@ Ext.define('ExpenseManager.view.category.List', {
                 xtype: 'list',
                 itemTpl: '{name}',
                 store: 'categoryStore',
-                height: '500px', 
                 id: 'categoryList'  
             }
         ]

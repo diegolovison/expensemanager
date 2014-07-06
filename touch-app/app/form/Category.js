@@ -20,7 +20,8 @@ Ext.define('ExpenseManager.form.Category', {
                         store: 'categoryStore',
                         displayField: 'name',
                         autoSelect: false,
-                        label: t('parent')
+                        label: t('parent'),
+                        valueField: 'id'
                     },
                     {
                         xtype: 'textfield',

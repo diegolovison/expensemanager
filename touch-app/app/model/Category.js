@@ -6,7 +6,9 @@ Ext.define('ExpenseManager.model.Category', {
             { name: 'name', type: 'string' }
         ],
 
-        belongsTo: 'ExpenseManager.model.Category',
+        associations: [
+            { type: 'belongsTo', model: 'ExpenseManager.model.Category', primaryKey: 'id', foreignKey: 'parent' }
+        ],
 
         proxy: {
             type: 'rest',

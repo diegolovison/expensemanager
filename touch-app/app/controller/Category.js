@@ -29,7 +29,7 @@ Ext.define('ExpenseManager.controller.Category', {
 
         var me = this;
 
-        var values = this.getCategoryForm().getValues();
+        var values = me.getCategoryForm().getValues();
 
         var category = Ext.create('ExpenseManager.model.Category', values);
 

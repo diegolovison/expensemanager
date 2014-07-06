@@ -9,6 +9,8 @@ Ext.define('ExpenseManager.view.category.Edit', {
 
     config: {
 
+        layout: 'fit',
+
         items: [
             {
                 xtype: 'toolbar',
@@ -34,7 +36,6 @@ Ext.define('ExpenseManager.view.category.Edit', {
             },
             {
                 xtype: 'categoryForm',
-                height: '500px'
             },
             {
                 xtype: 'toolbar',

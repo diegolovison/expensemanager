@@ -5,6 +5,8 @@ Ext.define('ExpenseManager.view.category.List', {
 
     config: {
 
+        layout: 'fit',
+
         items: [
             {
                 xtype: 'toolbar',

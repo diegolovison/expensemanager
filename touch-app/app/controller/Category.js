@@ -55,9 +55,13 @@ Ext.define('ExpenseManager.controller.Category', {
 
     onAddCategory: function() {
 
-        this.resetCategoryForm();        
+        this.resetCategoryForm();      
 
-        this.getCategory().push(this.getEditCategory());
+        var editCategory = this.getEditCategory();  
+
+        this.getRemoveCategoryBtn().hide();
+
+        this.getCategory().push(editCategory);
     },
 
     onBackCategory: function() {
@@ -72,6 +76,8 @@ Ext.define('ExpenseManager.controller.Category', {
         var me = this;
 
         var editCategory = me.getEditCategory();
+
+        this.getRemoveCategoryBtn().show();
 
         me.resetCategoryForm();
 

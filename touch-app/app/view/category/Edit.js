@@ -31,19 +31,6 @@ Ext.define('ExpenseManager.view.category.Edit', {
                         text: t('save'),
                         id: 'saveCategoryBtn',
                         ui: 'confirm'
-                    }
-                ]
-            },
-            {
-                xtype: 'categoryForm',
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'bottom',
-                ui: 'light',
-                items: [
-                    { 
-                        xtype: 'spacer' 
                     },
                     {
                         xtype: 'button',
@@ -54,6 +41,9 @@ Ext.define('ExpenseManager.view.category.Edit', {
                     }
                 ]
             },
+            {
+                xtype: 'categoryForm',
+            }
         ]
     }
 });

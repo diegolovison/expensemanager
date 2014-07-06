@@ -50,6 +50,9 @@ Ext.define('ExpenseManager.controller.Category', {
 
         if (this.getCategoryForm() != undefined) {
             this.getCategoryForm().reset();
+            this.getCategoryForm().setValues({
+                parent: null
+            });
         }
 
         if (!this.editCategory) {

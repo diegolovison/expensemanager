@@ -16,7 +16,7 @@ Ext.define('ExpenseManager.view.Category', {
 
         items: [
             {
-                xtype: 'listCategory',
+                xtype: 'categoryList',
             }
         ]
     }

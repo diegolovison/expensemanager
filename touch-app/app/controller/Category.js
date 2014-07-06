@@ -6,10 +6,10 @@ Ext.define('ExpenseManager.controller.Category', {
             saveCategoryBtn: '#saveCategoryBtn',
             addCategoryBtn: '#addCategoryBtn',
             backCategoryBtn: '#backCategoryBtn',
+            categoryList: '#categoryList',
             
             categoryForm: 'categoryForm',
             editCategory: 'editCategory',
-            listCategory: 'listCategory',
             category: 'category'
         },
         control: {
@@ -21,6 +21,9 @@ Ext.define('ExpenseManager.controller.Category', {
             },
             backCategoryBtn: {
                 tap: 'onBackCategory'
+            },
+            categoryList: {
+                select: 'onSelectCategory'
             }
         }
     },
@@ -36,17 +39,73 @@ Ext.define('ExpenseManager.controller.Category', {
         var categoryStore = Ext.getStore('categoryStore');
         
         category.save({
-            failure: function(record, operation) {
-                showFailure(operation);
-            },
             success: function(record, operation) {
                 categoryStore.add(category);
                 me.getCategory().pop();
+            },
+            failure: function(record, operation) {
+                showFailure(operation);
             }
         });
     },
 
     onAddCategory: function() {
+
+        this.resetCategoryForm();        
+
+        this.getCategory().push(this.getEditCategory());
+    },
+
+    onBackCategory: function() {
+
+        this.getCategory().pop();
+    },
+
+    onSelectCategory: function(view, record) {
+
+        var me = this;
+
+        var editCategory = me.getEditCategory();
+
+        me.resetCategoryForm();
+
+        var Category = Ext.ModelMgr.getModel('ExpenseManager.model.Category');
+
+        // TODO - improve this method to remove the second call to get the category parent
+        Category.load(record.getId(), {
+
+            success: function(category) {
+
+                var parentId = category.get('parent') != null ? category.get('parent').id : null;
+
+                if (parentId != null) {
+
+                    Category.load(parentId, {
+
+                        success: function(parent) {
+
+                            category.set('parent', parent);
+
+                            me.getCategoryForm().setRecord(category);
+                            me.getCategory().push(editCategory);
+                        }
+                    });
+
+                } else {
+
+                    me.getCategoryForm().setRecord(category);
+                    me.getCategory().push(editCategory);
+                }
+
+                
+            },
+            failure: function(record, operation) {
+                showFailure(operation);
+            }
+        });
+    },
+
+    resetCategoryForm: function() {
 
         if (this.getCategoryForm() != undefined) {
             this.getCategoryForm().reset();
@@ -54,16 +113,14 @@ Ext.define('ExpenseManager.controller.Category', {
                 parent: null
             });
         }
+    },
+
+    getEditCategory: function() {
 
         if (!this.editCategory) {
             this.editCategory = Ext.create('ExpenseManager.view.category.Edit');
         }
-    
-        this.getCategory().push(this.editCategory);
-    },
 
-    onBackCategory: function() {
-
-        this.getCategory().pop();
+        return this.editCategory;
     }
 });

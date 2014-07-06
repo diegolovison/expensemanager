@@ -1,7 +1,7 @@
 Ext.define('ExpenseManager.view.category.List', {
     extend: 'Ext.Container',
 
-    xtype: 'listCategory',
+    xtype: 'categoryList',
 
     config: {
 
@@ -28,7 +28,8 @@ Ext.define('ExpenseManager.view.category.List', {
                 xtype: 'list',
                 itemTpl: '{name}',
                 store: 'categoryStore',
-                height: '500px',   
+                height: '500px', 
+                id: 'categoryList'  
             }
         ]
     }

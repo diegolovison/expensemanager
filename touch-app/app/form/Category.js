@@ -15,6 +15,10 @@ Ext.define('ExpenseManager.form.Category', {
                 xtype: 'fieldset',
                 items: [
                     {
+                        xtype: 'hiddenfield',
+                        name: 'id'
+                    },
+                    {
                         xtype: 'selectfield',
                         name: 'parent',
                         store: 'categoryStore',

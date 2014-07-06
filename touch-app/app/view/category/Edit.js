@@ -20,13 +20,39 @@ Ext.define('ExpenseManager.view.category.Edit', {
                         text: t('back'),
                         ui: 'back',
                         id: 'backCategoryBtn'
+                    },
+                    { 
+                        xtype: 'spacer' 
+                    },
+                    {
+                        xtype: 'button',
+                        text: t('save'),
+                        id: 'saveCategoryBtn',
+                        ui: 'confirm'
                     }
                 ]
             },
             {
                 xtype: 'categoryForm',
                 height: '500px'
-            }
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                ui: 'light',
+                items: [
+                    { 
+                        xtype: 'spacer' 
+                    },
+                    {
+                        xtype: 'button',
+                        text: t('remove'),
+                        id: 'removeCategoryBtn',
+                        ui: 'decline',
+                        iconCls: 'delete'
+                    }
+                ]
+            },
         ]
     }
 });

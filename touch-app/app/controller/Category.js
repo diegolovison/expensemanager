@@ -6,6 +6,7 @@ Ext.define('ExpenseManager.controller.Category', {
             saveCategoryBtn: '#saveCategoryBtn',
             addCategoryBtn: '#addCategoryBtn',
             backCategoryBtn: '#backCategoryBtn',
+            removeCategoryBtn: '#removeCategoryBtn',
             categoryList: '#categoryList',
             
             categoryForm: 'categoryForm',
@@ -24,6 +25,9 @@ Ext.define('ExpenseManager.controller.Category', {
             },
             categoryList: {
                 select: 'onSelectCategory'
+            },
+            removeCategoryBtn: {
+                tap: 'onRemoveCategory'
             }
         }
     },
@@ -40,7 +44,6 @@ Ext.define('ExpenseManager.controller.Category', {
         
         category.save({
             success: function(record, operation) {
-                
                 categoryStore.load();
                 me.onBackCategory();
             },
@@ -100,6 +103,27 @@ Ext.define('ExpenseManager.controller.Category', {
                     me.getCategory().push(editCategory);
                 }
 
+                
+            },
+            failure: function(record, operation) {
+                showFailure(operation);
+            }
+        });
+    },
+
+    onRemoveCategory: function() {
+
+        var me = this;
+
+        var category = this.getCategoryForm().getRecord();
+
+        category.erase({
+            success: function() {
+
+                var categoryStore = Ext.getStore('categoryStore');
+                categoryStore.remove(category)
+
+                me.onBackCategory();
                 
             },
             failure: function(record, operation) {

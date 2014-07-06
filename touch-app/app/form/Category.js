@@ -5,7 +5,8 @@ Ext.define('ExpenseManager.form.Category', {
 
     requires: [
         'Ext.form.FieldSet',
-        'Ext.field.Select'
+        'Ext.field.Select',
+        'Ext.field.Hidden'
     ],
 
     config: {
@@ -33,12 +34,6 @@ Ext.define('ExpenseManager.form.Category', {
                         label: t('name')
                     }
                 ]
-            },
-            {
-                xtype: 'button',
-                text: t('save'),
-                id: 'saveCategoryBtn',
-                ui: 'confirm'
             }
         ]
     }
